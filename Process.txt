@@ -1,0 +1,11 @@
+1. Get API from Binance
+    Problem: don't want to connect with my actual Binance account which has actual BTC 
+    Find a way to get a fake Binance API : Found Binance Test Net 
+    https://docs.binance.org/guides/testnet.html
+    a. Successfully added Binance Test net to my metamask
+    b. Successfully got 1BNB credited into my test account 
+    **Now how do I get an API?**
+    c. Downloaded a VPN to circumvent the geolocation
+    d. Now looking where I'm getting the API from 
+    => learning about websockets/https://www.youtube.com/watch?v=z2ePTq-KTzQ/https://pypi.org/project/websocket-client/
+    Successfully installed websocket-client-1.2.3
