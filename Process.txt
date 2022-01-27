@@ -8,4 +8,12 @@
     c. Downloaded a VPN to circumvent the geolocation
     d. Now looking where I'm getting the API from 
     => learning about websockets/https://www.youtube.com/watch?v=z2ePTq-KTzQ/https://pypi.org/project/websocket-client/
-    Successfully installed websocket-client-1.2.3
+    **candlestick data are used to show how the market is moving, with open price, close price, highprice, low price**
+    
+    - using websocket instead of API?
+    - Spot trading instead of futures : spot allows instant trades => will select spot trading for this project 
+
+    https://testnet.binance.vision/
+
+    => got my API_KEY and API_SECRET from Binance Spot testnet 
+    => now looking at how to set that whole thing up 
