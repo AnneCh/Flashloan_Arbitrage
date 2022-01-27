@@ -1,7 +1,6 @@
-import websockets
+from time import sleep
+from binance import ThreadedWebsocketManager
+from binance.client import Client
+from os import dotenv
 
-ws = websockets.WebSocket()
-ws.connect("ws://echo.websocket.org", origin="testing_websockets.com")
-ws.send("Hello, Server")
-print(ws.recv())
-ws.close()
+client = Client(API_KEY, API_SECRET, testnet=True)
