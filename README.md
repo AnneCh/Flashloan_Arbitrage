@@ -1,4 +1,4 @@
-FIRST VERSION OF THE BOT
+SIMPLE VERSION OF THE BOT (would rather have the more advanced)
 
 Bot would only trade BTC/USD
 It would have only two state : BUY or SELL

@@ -1,4 +1,4 @@
-==> WILL FIRST CREATE A SIMPLE ROBOT BTC/USD, THEN THE NEXT PROJECT WILL BE USING FLASHLOANS AND ARBITRAGE
+MORE ADVANCED VERSION OF THE BOT
 
 I want to create a Trading Bot that includes two principles: - flashloans - arbirtrage
 

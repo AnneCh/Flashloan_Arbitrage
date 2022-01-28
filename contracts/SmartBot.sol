@@ -2,7 +2,9 @@
 
 pragma solidity >=0.6.6;
 
-// first, connect contract to binance API
+//contract communicates with blockchain to execute flashloans and trades
+// find a way to communicate with Aave
+// find a way to communicate with Binance (where )
 
 contract SmartBot {
     // Define which state the robot is in. Is its next move to SELL or BUY?
@@ -11,9 +13,6 @@ contract SmartBot {
         BUY,
         SELL
     }
-    // Constants of thresholds
-    uint256 public upwardThreshold;
-    uint256 public dipThreshold;
-    uint256 public profitThreshold;
-    uint256 public stopLossThreshold;
+
+    function getFloashLoan()
 }
