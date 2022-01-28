@@ -68,3 +68,12 @@ Flashloan logic through Aave:
   => if the buy/sell has worked properly, aka, if I made profit, then I transfer the flash loaned `amounts` of `reserves` back to the `LendingPool`
   => the `LendingPool` contract updates the relevant details of the reserves and pulls the flash loaned amount + fee
   => if the `amount` owed is not available (due to a lack of balance or approval) then the transaction reverts
+
+What I need:
+=> addresses, abi and fee information for each exchange
+=> all token assets that I want to monitor, and their configuration
+=> amount of money to risk for each trade
+
+Smart contract used to buy one token on one exchange and sell the same token ona different exchange.
+With a smart contract, only if both transactions are successfull is the strategy executed
+https://cryptomarketpool.com/can-you-make-money-creating-an-arbitrage-bot-running-on-the-ethereum-blockchain/

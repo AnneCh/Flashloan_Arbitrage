@@ -20,3 +20,20 @@
 
     => Should I use CCXT library and forget about Websockets? 
     => Explore https://www.freqtrade.io/en/stable/ and see if it's worth adding it
+
+
+2. Start defining which kinds of functions are going to be necessary
+    as well as starting my boiler plate:
+        - SmartBot.sol
+        - deployBot.py
+        - .env file with sensitive variables
+        - helpful_scripts.py to get the account used for testing and other recurring functions
+=> do I write a script for each connection ? Like one script to get exchange 1, one script for exchange 2, one script for flashloans
+=> still struggle defining what goes into the .sol and what goes into .py files 
+    => .sol interacts with the blockchain, that means it creates blocks, it deals with transactions
+        => in that sense, SmartBot.sol's functions are used to trigger flashloan/buy/sell 
+        => SmartBot.sol is also used to connect with other contracts that I'll need to use
+    => does that mean that the python scripts are for?:
+        => getting prices, checking if prices are different enough to trigger flashloans
+        => connect to account
+        => 
