@@ -1,7 +1,5 @@
 ==> WILL FIRST CREATE A SIMPLE ROBOT BTC/USD, THEN THE NEXT PROJECT WILL BE USING FLASHLOANS AND ARBITRAGE
 
-0. This is my first portoflio project.
-
 I want to create a Trading Bot that includes two principles: - flashloans - arbirtrage
 
 1. I want this bot to be simple, to offer few options so to be suitable for people who have no idea
@@ -47,6 +45,8 @@ https://yakkomajuri.medium.com/a-step-by-step-guide-to-building-a-trading-bot-in
 https://docs.google.com/spreadsheets/d/1HM_AvNBAHOvac6ECkl1E-0r8rNZbml6-BVRGA8MroPE/edit#gid=0
 https://www.coingecko.com/en/exchanges
 https://startbootstrap.com/themes
+https://medium.com/@bneiluj/flash-boys-arbitrage-dao-c0b96d094f93
+youtube.com/watch?v=Aw7yvGFtOvI : aave example of code
 
 https://github.com/jaggedsoft/node-binance-api
 
@@ -56,3 +56,15 @@ USEFUL DATA
 - make sur about the withdrawal limits/KYC for the exchange platforms chosen
 - OpenOcean
 - pick up a server that allows me to run my bot 24/7 (Digital Ocean, AWS, Azure, CGS)
+
+IF FLASHLOANS : Can I connect to a platform like DEFI PULSE get the best price for flashloans?
+Or is it better to just get into Aave or Compound
+
+Flashloan logic through Aave:
+
+- Contract.sol calls the `LendingPool` contract, requesting a flash loan of a certain `amounts` of `reserves` using `flashloans()`
+- await for the `LendingPool` to transfer the requested `amounts` of the `reserves` to my contract, then calls `executeOperation()` on my contract (or whatver contract I specify as being the `_receiver`)
+- Now that my contract has the holding flash loaned `mounts`, I need to execute the code that will buy from an exchange and sell onto another one
+  => if the buy/sell has worked properly, aka, if I made profit, then I transfer the flash loaned `amounts` of `reserves` back to the `LendingPool`
+  => the `LendingPool` contract updates the relevant details of the reserves and pulls the flash loaned amount + fee
+  => if the `amount` owed is not available (due to a lack of balance or approval) then the transaction reverts
