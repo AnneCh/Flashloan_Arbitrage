@@ -41,6 +41,8 @@
 31.01.22
 - Pick up a defined strategy, which platform am I going to make the trades on
 
+ressource N1 : https://comparebrokers.co/compare/crypto-arbitrage/
+
 => triangular trade is basically the arbitrage method I'm going to use
 => There are several data that I need to gather in order to choose which exchanges I'll be dealing with
     => Fees incurred with each transactions *will determine the gross and net profit* 
@@ -52,8 +54,40 @@
 are those regulations needed for each user of my bot? /// 
 => posted the question on twitter
 
+    **additional thought:
     Need to build a strategy that is the safest possible :
         => if prices fluctuate outside of a certain margin, transaction must be reversed:
          => figure out what this margin is taking into account fees already incurred by the process
          => How much does my wallet need to possess in order for flashloans and arbitrage system
             to work out? What is the minimum effective dose? 
+    ** 
+
+    => ALWAYS KEEP IN MIND to consider the speed of each movement, as the swiftness of the entire process
+        is a shock absorber to the volatility of prices' effect on the opportunities for profit.
+            => BTC transactions are known to take up a lot of time, for ex
+
+/// LOOK UP hedging strategies as a backup, as an "insurance" for the arbiter? ///
+
+
+** Should I try to include a function that keeps an eye on new tokens' creations, and incurr a trigger
+of a new trade to look for? => that can be a function for later to implement, when I want to refine the bot
+
+ressource N2 https://www.coindesk.com/learn/crypto-arbitrage-trading-how-to-make-low-risk-gains/
+
+- A arbitrage can be cross-exchange without being triangular 
+    => triangular would be better, but I may stick witha  simple cross-exchange for now
+    => If I find out that triangular strategy isn't that much different to implement from cross-exchange
+    => then I'll opt for it.
+
+- It is possible to mitigate the fees of borrowing, buying, exchanging, selling, paying back by 
+    possessing some amount in a wallet on each of the platforms
+    => I can see that if it's simple cross-exchange, but wouldn't that be way too much to spare
+     if we are dealing with 100 exchanges?
+
+** Many things can make it so an exchange is suddenly offline or faulty.
+ => what are the strategies/code that will safeguard huge sudden losses?
+ => some kind of automatic OFF switch that put a hold on/revert every trade until the exchange is back online?
+
+ //// FIGURE OUT if I cna use https://bybit-exchange.github.io/docs/testnet/inverse/?python--pybit#t-ipratelimits 
+ for testing, what advantages would that provide to the bot's strategy? ///
+ 
