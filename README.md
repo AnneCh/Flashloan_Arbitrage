@@ -78,3 +78,6 @@ Smart contract used to buy one token on one exchange and sell the same token ona
 With a smart contract, only if both transactions are successfull is the strategy executed
 https://cryptomarketpool.com/can-you-make-money-creating-an-arbitrage-bot-running-on-the-ethereum-blockchain/
 https://cryptomarketpool.com/flash-loan-arbitrage-on-uniswap-and-sushiswap/
+
+About using Ethereum logs as event (python):
+https://cryptomarketpool.com/how-to-listen-for-ethereum-events-using-web3-in-python/

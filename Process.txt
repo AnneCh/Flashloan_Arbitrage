@@ -36,4 +36,24 @@
     => does that mean that the python scripts are for?:
         => getting prices, checking if prices are different enough to trigger flashloans
         => connect to account
-        => 
+    
+
+31.01.22
+- Pick up a defined strategy, which platform am I going to make the trades on
+
+=> triangular trade is basically the arbitrage method I'm going to use
+=> There are several data that I need to gather in order to choose which exchanges I'll be dealing with
+    => Fees incurred with each transactions *will determine the gross and net profit* 
+    => ease to subscribe/use/KYC
+    => popularity (can define trends), inc number of transactions/trades, users on the paltform etc. 
+    => is the protocol only working with this exchange or can I use the same protocol for different platforms? (like Sushiswap and cant remember the name)
+
+/// Research to be made: are all the KYC procedures on exchanges only for the contract's owner, or 
+are those regulations needed for each user of my bot? /// 
+=> posted the question on twitter
+
+    Need to build a strategy that is the safest possible :
+        => if prices fluctuate outside of a certain margin, transaction must be reversed:
+         => figure out what this margin is taking into account fees already incurred by the process
+         => How much does my wallet need to possess in order for flashloans and arbitrage system
+            to work out? What is the minimum effective dose? 
