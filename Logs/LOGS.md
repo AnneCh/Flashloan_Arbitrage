@@ -109,3 +109,16 @@ Got some answers but not enough to draw an inclusive big picture.
 - studying Aave documentation and https://github.com/aave/aave-v3-core
 - looks like I need to instal somethinh called Docker in order to use Aave's contract properly when trying to deploy on a testnet
 - trying to get docker to work
+- docker is installed but my connection request is dropping
+- I ran the installation again through different commands (redid the entire path, I think the docker engine wasn't installed properly)
+  Now Docker works. I can move on to Aave connection to my smart contract
+
+**\*** Aave takes 0.09% of the flashloaned amount as a fee to pay the depositors **\***
+--- Look up Efficiency mode from Aave and how to implement it, being able to borrow a category of assets can make transactions more diversified with less code ? ---
+
+--- Look up isolation mode and if would need to offer the possibility to use it ---
+
+I'm trying to follow Patrick's video on Aave flashloan implementation, but I've chosen to download the latest version and still try to implement
+**=> In the end, it's all the same idea and logic, it's just different names and pathways to get to those names.**
+
+See familiar things in the cloned repo, like how this project has open Zeppelin and Chainlink dependencies, for making mocks like I coded along with the FCC tutorial video, tha AggregatorInterface etc.

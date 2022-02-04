@@ -4,7 +4,8 @@ pragma solidity >=0.6.6;
 
 //contract communicates with blockchain to execute flashloans and trades
 // find a way to communicate with Aave
-// find a way to communicate with Binance and another platform
+// find a way to communicate with Binance and Kraken
+// => got an account on both platforms and have access to API keys
 
 // make sure to keep the number of functions to a minimum to avoid too much gas fees
 
