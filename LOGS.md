@@ -100,10 +100,12 @@ Got some answers but not enough to draw an inclusive big picture.
         or it it making my life just a bit too easy?
 
 ---04.02.22---
-//// didn't log yesterday as I want doing more research on exchanges and didn't learn much new
+//// didn't log yesterday as I was doing more research on exchanges and didn't learn much new
 
 - created account on Kraken
 - KYC was pretty seamless and I got a confirmation that my account got to Intermediate level in less than 5mn
 - look into Aave and which protocol to take, V3 is the latest and seems to be stable enough to use
 - reopening Patrick's video on Aave Flashloan
 - studying Aave documentation and https://github.com/aave/aave-v3-core
+- looks like I need to instal somethinh called Docker in order to use Aave's contract properly when trying to deploy on a testnet
+- trying to get docker to work
