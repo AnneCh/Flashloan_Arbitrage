@@ -122,3 +122,11 @@ I'm trying to follow Patrick's video on Aave flashloan implementation, but I've 
 **=> In the end, it's all the same idea and logic, it's just different names and pathways to get to those names.**
 
 See familiar things in the cloned repo, like how this project has open Zeppelin and Chainlink dependencies, for making mocks like I coded along with the FCC tutorial video, tha AggregatorInterface etc.
+
+I'm working on the Front End part and have decided of which strategy to adopt in order to make my portfolio in the most learn-ful way
+Build it in React, as it is a program that I wanted to learn anyway, this way I can learn more about React and actually apply that knowledge to something that I need to get done
+I'll try and have it customized as I build it through tutorials, adding more stuff along the way
+
+I've managed to customize the skills part, the projects part and have a title appear but then an error message appear, so I'll have to check that out later
+
+=> Will need to start studying react more in depth
