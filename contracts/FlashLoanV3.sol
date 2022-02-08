@@ -8,19 +8,10 @@ import "aave-v3-core/contracts/interfaces/IPool.sol";
 import "aave-v3-core/contracts/interfaces/IERC20WithPermit.sol";
 
 
-
-
-
-
-
-
-
-
-
 contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
-    constructor(address _addressProvider)
-        public
-        FlashLoanReceiverBase(_addressProvider){}
+    // constructor(address _addressProvider)
+    //     public
+    //     FlashLoanReceiverBase(_addressProvider){}
 
     // this _addressProvider is the Lending Pool's , where amount will be loaned from
     // I have the mainnet-fork, kovan and mainnet aave_lending_pool addresses in brownie-config.yaml
@@ -42,7 +33,7 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
 //     ////// Here goes my arbitrage logic
 
 //     /// and now it's time to approve the Lending pool for spending our tokens
-//     ///and repay the pool with interests
+//     ///and repay the pool with interests (premiums)
     
         for (uint256 i = 0; i < assets.length; i++) {
             uint256 amountOwing = accounts[i].add(premiums[i]);
@@ -59,7 +50,7 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
 //     {}
 
 //     /// this function is taking the address (_asset) of the token to request a specified amount of that
-//     ///token that he wants to get loaned to him
+//     ///token that he wants to get loaned to it => this present contract is where the loaned amount is to be recieved
 //     function flashloan(address _asset) public onlyOwner {
 //         bytes memory data = "";
 //         uint256 amount = 1 ether;
