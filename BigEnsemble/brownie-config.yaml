@@ -14,7 +14,7 @@ compiler:
   solc:
     remappings:
       - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0"
-
+dotenv: .env
 network:
   default: mainnet-fork
   mainnet-fork:
