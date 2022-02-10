@@ -62,6 +62,9 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
         internal
     {
         address receiverAddress = address(this);
+        uint256 modes = 0;
+        bytes params = "";
+        uint16 referralCode = 0;
 
         LENDING_POOL.flashloan(
             receiverAddress,
