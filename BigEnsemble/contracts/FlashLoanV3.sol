@@ -35,9 +35,42 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
         return true;
     }
 
+    // FLASHLOAN FUNCTION - flashloan()
+
     //     /// _flashloan is the main function of this contract, it gathers everything together and calls the
     //     /// LENDING.POOL.flashloan() function, which is the actual one that will trigger our flashloan to be laoned
 
     //     /// this function is taking the address (_asset) of the token to request a specified amount of that
     //     ///token that he wants to get loaned to it => this present contract is where the loaned amount is to be recieved
+
+    // takes several parameters :
+    //     1.receiverAddress (address receiving the amount loaned - must comply with flashLoanReceiver Interface.)
+    //     2.assets (Array of addresses of the reserves to flashloan)
+    //     3.amounts (uint256 amounts of assets to flashloan, must be the same number of elements as `assets`)
+    //     4.modes (uint 256 type of debt to open if the flashloan is not returned: 0 is revert)
+    //     5.onBehalfOf (address, matters if mode is NOT 0)
+    //     6.params (bytes, to be used bu the receiverAddress)
+    //     7.referralCode (uint16, for aave referral program)
+
+    // 1. address(this) because it is this FlashLoanV3.sol contract that will receive the flashloaned amount
+    // 2.
+
+    // the function takes 2 parameters, which are what the user will be entering, aka TOKEN (asset)
+    // and how much of that token (amount)
+    // internally, the function will add the rest of the parameters and call LENDING_POOL.flashloan()
+    function flashLoanCall(address[] memory assets, uint256[] memory amounts)
+        internal
+    {
+        address receiverAddress = address(this);
+
+        LENDING_POOL.flashloan(
+            receiverAddress,
+            assets,
+            amounts,
+            modes,
+            onBehalfOf,
+            params,
+            referralCode
+        );
+    }
 }
