@@ -14,6 +14,6 @@ def main():
 def get_weth():
     acc = accounts.add(config["wallets"]["from_key"])
     weth = interface.WethInterface(config["networks"][network.show_active()]["weth"])
-    tx = weth.deposit({"from": acc, "value": 1000000000000000000})
-    print("Received 1 WETH")
-    return
+    tx = weth.deposit({"from": acc, "value": 200000000000000000})
+    print("Received 0.2 WETH")
+    return tx
