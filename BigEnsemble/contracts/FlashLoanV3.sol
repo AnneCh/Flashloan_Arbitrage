@@ -6,11 +6,15 @@ import {FlashLoanReceiverBase} from "../aave/contracts/flashloan/base/FlashLoanR
 import {IPoolAddressesProvider} from "../aave/contracts/interfaces/IPoolAddressesProvider.sol";
 import {IPool} from "../aave/contracts/interfaces/IPool.sol";
 import {IERC20WithPermit} from "../aave/contracts/interfaces/IERC20WithPermit.sol";
+import "./Withdrawable.sol";
 
 contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
-    // constructor(address _addressProvider)
-    //     public
-    //     FlashLoanReceiverBase(_addressProvider){}
+    address LENDING_POOL;
+
+    constructor(address _addressProvider)
+        public
+        FlashLoanReceiverBase(_addressProvider)
+    {}
 
     // this _addressProvider is the Lending Pool's , where amount will be loaned from
     // I have the mainnet-fork, kovan and mainnet aave_lending_pool addresses in brownie-config.yaml
@@ -30,7 +34,7 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
 
         for (uint256 i = 0; i < assets.length; i++) {
             uint256 amountOwing = accounts[i].add(premiums[i]);
-            IERC20(asserts[i]).approve(address(LENDING_POOL), amountOwing);
+            IERC20(assets[i]).approve(address(LENDING_POOL), amountOwing);
         }
         return true;
     }
@@ -71,7 +75,6 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
             assets,
             amounts,
             modes,
-            onBehalfOf,
             params,
             referralCode
         );
