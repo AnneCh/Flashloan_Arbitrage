@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity <=0.8.11;
+pragma solidity ^0.8.10;
 
 import {FlashLoanReceiverBase} from "../aave/contracts/flashloan/base/FlashLoanReceiverBase.sol";
 import {IPoolAddressesProvider} from "../aave/contracts/interfaces/IPoolAddressesProvider.sol";
@@ -33,7 +33,7 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
         /// 1 of my ETH to WETH adn store WETH in my metamask)
 
         for (uint256 i = 0; i < assets.length; i++) {
-            uint256 amountOwing = accounts[i].add(premiums[i]);
+            uint256 amountOwing = amounts[i].add(premiums[i]);
             IERC20(assets[i]).approve(address(LENDING_POOL), amountOwing);
         }
         return true;
@@ -67,7 +67,7 @@ contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
     {
         address receiverAddress = address(this);
         uint256 modes = 0;
-        bytes params = "";
+        bytes memory params = "";
         uint16 referralCode = 0;
 
         LENDING_POOL.flashloan(

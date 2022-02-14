@@ -130,3 +130,12 @@ I'll try and have it customized as I build it through tutorials, adding more stu
 I've managed to customize the skills part, the projects part and have a title appear but then an error message appear, so I'll have to check that out later
 
 => Will need to start studying react more in depth
+
+11.02.22
+
+I havem't been logging as mucha s I should have, I've been trying to get a bigger picture approach, took notes on different topics, like security, trying to see if I understand how smart contracts are built with all different intricacies 
+
+today I've worked on undestanding if I can try to exchange ETH to WETH to communicate with the aave lending pool
+It looks like the Aave lending pool only interacts with the Kovan testnet, and not rinkeby
+and I can't find a way to get enough ETH on my Kovan network, when I have 18ETH in my rinkeby test wallet
+All Kovan faucets seem down or malfunctionning 

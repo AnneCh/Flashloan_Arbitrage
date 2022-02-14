@@ -1,0 +1,10 @@
+14.02.22
+No commercial bullshit day today, I have projects to work on. 
+I need to figure out how to get my WETH with the code that I have.
+I've followed two different ways of doing to try to get to that first step, the Aave
+white paper on flashloans V2 (wanted to do V3 but the steps haven't been layed out yet,
+had to follow V2), and the Aave flashloan tutuorial made by Patrick Collins.
+I've written a script to exchange my ETH to WETH through the Kovan test network, which
+I do have configured and I have some ETH and already have the WETH token registered. I
+have entered my wallet ID and private key to have access to my testnet funds, but
+the transaction does not go through.
