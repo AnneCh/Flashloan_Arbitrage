@@ -1,4 +1,6 @@
 # use Ganache's forked mainnet mode as the default network
+dotenv: .env
+
 networks:
   default: mainnet-fork
 
@@ -16,7 +18,6 @@ compiler:
     remappings:
       - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0"
       - '@aave=aave/protocol-v2@1.0.1'
-dotenv: .env
 network:
   default: mainnet-fork
   mainnet-fork:

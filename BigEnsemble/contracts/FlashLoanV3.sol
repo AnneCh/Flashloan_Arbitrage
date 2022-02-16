@@ -9,8 +9,6 @@ import {IERC20WithPermit} from "../aave/contracts/interfaces/IERC20WithPermit.so
 import "./Withdrawable.sol";
 
 contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
-    address LENDING_POOL;
-
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBase(_addressProvider)
