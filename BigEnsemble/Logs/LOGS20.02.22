@@ -31,3 +31,5 @@ part is in process to be made available, and the page for it (https://docs.aave.
 direct us back to the v2; so should import aave V3 and use the way V2 flashloans were made, replacing 
 each file by the appropriate corresponding V3, or should I directly interact with the V2 and forget
 about the V3 ?
+It is very difficult to find any relevant information regarding using V3 to do flashloans
+I'll back down and use V2 for now, it's a compromise on understanding for the sake of moving forward. 

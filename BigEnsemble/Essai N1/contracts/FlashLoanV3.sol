@@ -2,11 +2,6 @@
 
 pragma solidity ^0.8.10;
 
-import "FlashLoanReceiverBase.sol";
-import "https://github.com/aave/aave-v3-core/blob/master/contracts/protocol/configuration/PoolAddressesProvider.sol";
-import "IPool.sol";
-import "IERC20WithPermit.sol";
-import "Withdrawable.sol";
 
 contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
     constructor(address _addressProvider)
