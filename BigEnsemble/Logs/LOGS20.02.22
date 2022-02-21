@@ -1,0 +1,19 @@
+20.02.22
+back to figuring out the differences in imports, between just import, 
+import from, inheritance, libraries etc.. it's all a bit confusing as
+it looks like in the end, we are getting very similar results,
+either whatever that function returned, or the logic of the function to
+return something depending on the input 
+
+https://forum.openzeppelin.com/t/import-vs-import-and-inherit/4772
+https://ethereum.stackexchange.com/questions/111850/i-need-help-understanding-differences-between-inheritance-import-vs-separate-con
+
+https://docs.soliditylang.org/en/v0.7.5/layout-of-source-files.html#importing-other-source-files
+=> It is better to import specific data/functions to not pollute the namespace (?)
+for example
+``` import * as symbolName from "filename";
+ ```
+ or``` import "filename" as symbolName;```
+
+
+21.02.22
