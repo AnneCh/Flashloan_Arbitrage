@@ -1,9 +1,9 @@
 dependencies:
-  - aave/core-v3@1.13.1
+  - aave/ 
 compiler:
   solc:
     remappings:
-      - '@aave=aave/core-v3@1.13.1'
+      - '@aave=aave/'
 networks:
   default: mainnet-fork
   kovan:
