@@ -1,16 +1,15 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.10;
+pragma solidity <=0.8.10;
 
 /// New goal, is to make the flashloan contract work with Aave V2
 
-import "./aave/FlashLoanReceiverBaseV2.sol";
-import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
-import "../../interfaces/v2/ILendingPoolV2.sol";
+import { FlashLoanReceiverBase } from "@aave/protocol-v2/contracts/flashloan/base/FlashLoanReceiverBase.sol";
+import { ILendingPool } from "@aave/protocol-v2/contracts/interfaces/ILendingPool.sol";
+import { ILendingPoolAddressesProvider } from "@aave/protocol-v2/contracts/interfaces/ILendingPoolAddressesProvider.sol";
+import { IERC20 } from "@aave/protocol-v2/contracts/dependencies/openzeppelin/contracts/IERC20.sol";
 
 
-// import flashloan receiver base from github or ...?
-// import lending pool 
 // import safemath
  
 

@@ -5,9 +5,9 @@ networks:
 # automatically fetch contract sources from Etherscan
 autofetch_sources: True
 
-# require OpenZepplin Contracts v4.5.0
-dependencies:
-  - OpenZeppelin/openzeppelin-contracts@4.5.0
+# # require OpenZepplin Contracts v4.5.0
+# dependencies:
+#   - OpenZeppelin/openzeppelin-contracts@4.5.0
 
 # path remapping to support OpenZepplin imports with NPM-style path
 compiler:
