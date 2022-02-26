@@ -13,34 +13,34 @@ import { IERC20 } from "@aave/protocol-v2/contracts/dependencies/openzeppelin/co
 // import safemath
  
 
-// contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
-//     constructor(address _addressProvider)
-//         public
-//         FlashLoanReceiverBase(_addressProvider)
-//     {}
+contract FlashLoanV3 is FlashLoanReceiverBase, Withdrawable {
+    constructor(address _addressProvider)
+        public
+        FlashLoanReceiverBase(_addressProvider)
+    {}
 
 //     // this _addressProvider is the Lending Pool's , where amount will be loaned from
 //     // I have the mainnet-fork, kovan and mainnet aave_lending_pool addresses in brownie-config.yaml
 
-//     function executeOperation(
-//         address[] calldata assets,
-//         uint256[] calldata amounts,
-//         uint256[] calldata premiums,
-//         address initiator,
-//         bytes calldata params
-//     ) external override returns (bool) {
-//         //     ////// Here goes my arbitrage logic
+    function executeOperation(
+        address[] calldata assets,
+        uint256[] calldata amounts,
+        uint256[] calldata premiums,
+        address initiator,
+        bytes calldata params
+    ) external override returns (bool) {
+        //     ////// Here goes my arbitrage logic
 
-//         //     /// and now it's time to approve the Lending pool for spending our tokens
-//         //     ///and repay the pool with interests (premiums paid in WETH, need script to exchange
-//         /// 1 of my ETH to WETH adn store WETH in my metamask)
+        //     /// and now it's time to approve the Lending pool for spending our tokens
+        //     ///and repay the pool with interests (premiums paid in WETH, need script to exchange
+        /// 1 of my ETH to WETH adn store WETH in my metamask)
 
-//         for (uint256 i = 0; i < assets.length; i++) {
-//             uint256 amountOwing = amounts[i].add(premiums[i]);
-//             IERC20(assets[i]).approve(address(LENDING_POOL), amountOwing);
-//         }
-//         return true;
-//     }
+        for (uint256 i = 0; i < assets.length; i++) {
+            uint256 amountOwing = amounts[i].add(premiums[i]);
+            IERC20(assets[i]).approve(address(LENDING_POOL), amountOwing);
+        }
+        return true;
+    }
 
 //     // FLASHLOAN FUNCTION - flashloan()
 
@@ -65,21 +65,21 @@ import { IERC20 } from "@aave/protocol-v2/contracts/dependencies/openzeppelin/co
 //     // the function takes 2 parameters, which are what the user will be entering, aka TOKEN (asset)
 //     // and how much of that token (amount)
 //     // internally, the function will add the rest of the parameters and call LENDING_POOL.flashloan()
-//     function flashLoanCall(address[] memory assets, uint256[] memory amounts)
-//         internal
-//     {
-//         address receiverAddress = address(this);
-//         uint256 modes = 0;
-//         bytes memory params = "";
-//         uint16 referralCode = 0;
+    function flashLoanCall(address[] memory assets, uint256[] memory amounts)
+        internal
+    {
+        address receiverAddress = address(this);
+        uint256 modes = 0;
+        bytes memory params = "";
+        uint16 referralCode = 0;
 
-//         LENDING_POOL.flashloan(
-//             receiverAddress,
-//             assets,
-//             amounts,
-//             modes,
-//             params,
-//             referralCode
-//         );
-//     }
-// }
+        LENDING_POOL.flashloan(
+            receiverAddress,
+            assets,
+            amounts,
+            modes,
+            params,
+            referralCode
+        );
+    }
+}
