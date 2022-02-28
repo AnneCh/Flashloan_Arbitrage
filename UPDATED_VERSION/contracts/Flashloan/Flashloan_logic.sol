@@ -7,10 +7,9 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
-    constructor(address _addressProvider)
-        public
-        FlashLoanReceiverBaseV2(_addressProvider)
-    {}
+    uint deadline;
+
+    constructor(address _addressProvider) public FlashLoanReceiverBaseV2(_addressProvider) {deadline = block.timestamp + 300;}
 
     /**
      * @dev This function must be called only be the LENDING_POOL and takes care of repaying
@@ -33,6 +32,8 @@ contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
         // This contract now has the funds requested.
         // My logic goes here.
         //
+// Can my arbitrage logic be imported from a javascript or python script?
+
 
         // At the end of my logic above, my contract owes
         // the flashloaned amounts + premiums.
