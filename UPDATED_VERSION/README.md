@@ -7,14 +7,15 @@ I want this bot to be simple, to offer few options so to be suitable for people 
 Every X seconds :
 
 - Analyze 2 (or more?) platforms (API Calls?) => example, Is there more than a 2% difference on the price of BTC between platform X and platform Y ? => IF YES1, trigger a flashloan contract => place the Buy Order on platform X => Get latest price on platform Y => is price still at or above 2% higher than what I just bought? => IF YES2, Sell => Withdraw => trigger contract to payback the flashloan / IF NO2 => Cancel trade
-(keep in mind to keep the code simple and as direct as possible, I'll have to skim my code for ways to shorten while still being as secure as possible)
 
 => IF NO1, do nothing
 
+
+### (keep in mind to keep the code simple and as direct as possible, I'll have to skim my code for ways to shorten while still being as secure as possible)
+
 2. WHAT THE BOT NEEDS TO DO
 
-- needs to listen to two markets, get prices for a few currencies, and execute trades
-  Ideally, it needs to execute trades using flashloans, so to avoid high deposits of FIAT or crypto in advance
+- needs to listen to two(or more) markets, get prices for a selected currencies/assets, and execute trades
 
 - needs to be cloud based so the bot doesn't stop when shutting the computer
 
@@ -24,16 +25,24 @@ Ensure that before I start coding, I have:
 - Enabled API usage on the exchange and have an API key
 - Decided how I will be hosting my bot
 
-"- The bot will only ever be in one of two states: BUY or SELL. It will not place various buy or sell orders consecutively at multiple price points. If its last operation was a sale, it will try to buy next.
-
-- It will use fixed thresholds for buying and selling. A smarter bot might be able to tinker with the thresholds based on various indicators, but my bot will have its strategy and thresholds set manually.
-- It will only trade one currency pair e.g. BTC/USD." (yakkomajuri.medium)
-
 4. FRONT END
 
-- connect user wallet to the bot
-- disconnect user wallet from the bot
-- choose strategy amongst a few (which ones to list?)
+- connect users {Metamask} wallet to the bot
+- disconnect users wallet from the bot
+  Once connected
+  - Can select a/several ${tokens} to Arbitrage()
+  - Can selecte 2/more ${exchanges} to Arbitrage() on
+  - Can select a ${minAmount} and ${maxAmount} to flashloan as the ${amountToArbitrage}
+  - Can save their selection as template
+  - Can save their selection as StrategyName in the Strategies 
+
+
+
+
+
+
+
+
 
 USEFUL LINKS
 https://airtable.com/shrMmgI2ljeugMbQX/tblW0ecPm3y8jZlSz
