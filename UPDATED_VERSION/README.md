@@ -27,15 +27,19 @@ Ensure that before I start coding, I have:
 
 4. FRONT END
 
-- connect users {Metamask} wallet to the bot
-- disconnect users wallet from the bot
+- Connect Users {Metamask} Wallet to the bot
+- Disconnect Users Wallet from the bot
   Once connected
-  - Can select a/several ${tokens} to Arbitrage()
-  - Can selecte 2/more ${exchanges} to Arbitrage() on
-  - Can select a ${minAmount} and ${maxAmount} to flashloan as the ${amountToArbitrage}
-  - Can save their selection as template
-  - Can save their selection as StrategyName in the Strategies 
+  - Select a/several ${tokens} to Arbitrage()
+  - Selecte 2/more ${exchanges} to Arbitrage() on
+  - Select a ${minAmount} and ${maxAmount} to flashloan as the ${amountToArbitrage}
+  - Save their selection as template
+  - Save their selection as StrategyName in the Strategies 
+  - Upload their StrategyName to our Bot (*cool animation*) and give our Bot on the mission to find the selection that the User has chosen.
 
+  - Once the Bot has accepted (*quick review of the points before and checking that everything is fine*) the StrategyName, the User can either see data, or choose for the Bot to stop executing their StrategyName
+
+  - Users can have up to 2 Strategies for free, for more strategies, Users need to up
 
 
 
