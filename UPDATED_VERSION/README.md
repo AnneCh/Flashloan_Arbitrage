@@ -2,7 +2,7 @@ I want this bot to be simple, to offer few options so to be suitable for people 
    how to trade, how to build a trading strategy, so they can just click a few buttons and have
    their bot start working for them.
 
-1. DEFINE LOGIC
+--- DEFINE LOGIC
 
 Every X seconds :
 
@@ -13,7 +13,7 @@ Every X seconds :
 
 ### (keep in mind to keep the code simple and as direct as possible, I'll have to skim my code for ways to shorten while still being as secure as possible)
 
-2. WHAT THE BOT NEEDS TO DO
+--- WHAT THE BOT NEEDS TO DO
 
 - needs to listen to two(or more) markets, get prices for a selected currencies/assets, and execute trades
 
@@ -21,11 +21,15 @@ Every X seconds :
 
 Ensure that before I start coding, I have:
 
-- Registered and been approved to use an exchange
-- Enabled API usage on the exchange and have an API key
-- Decided how I will be hosting my bot
+- Registered and been approved to use an exchange (Binance ok)
+- Enabled API usage on the exchange and have an API key (Binance ok)
+- Decided how I will be hosting my bot (not done that yet...)
 
-4. FRONT END
+
+------------------------------
+
+
+--- FRONT END
 
 - Connect Users {Metamask} Wallet to the bot
 - Disconnect Users Wallet from the bot
@@ -39,7 +43,14 @@ Ensure that before I start coding, I have:
 
   - Once the Bot has accepted (*quick review of the points before and checking that everything is fine*) the StrategyName, the User can either see data, or choose for the Bot to stop executing their StrategyName
 
-  - Users can have up to 2 Strategies for free, for more strategies, Users need to up
+  - Users can have up to 2 Strategies for free, for more strategies, Users need to upgrade their Account by depositing some Coins(Tokens, cryptocurrencies like ETH or BTC, preferred currency will have to be determined).
+
+  // *Strategies*:
+  - Up to 2 for free
+
+    Each Strategy is composed of different fields to be filled in by the Users
+      - Display Coins available to trade by fetching the Metamask's Wallet Balance of Coins
+      (Users can only trade)
 
 
 
