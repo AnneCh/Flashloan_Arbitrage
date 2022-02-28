@@ -2,6 +2,7 @@ I want this bot to be simple, to offer few options so to be suitable for people 
    how to trade, how to build a trading strategy, so they can just click a few buttons and have
    their bot start working for them.
 
+
 --- DEFINE LOGIC
 
 Every X seconds :
@@ -49,8 +50,12 @@ Ensure that before I start coding, I have:
   - Up to 2 for free
 
     Each Strategy is composed of different fields to be filled in by the Users
-      - Display Coins available to trade by fetching the Metamask's Wallet Balance of Coins
+      - Display Coins available to trade by fetching the Users' Metamask's Wallet Balance of Coins
       (Users can only trade)
+      ====>>>> Option to access a platform to buy coins (ideally exchanges that we have listed )
+      - Selection of one (or several??) Coins to Arbitrage()
+      - Selection of amount of Coins to FlashLoan()
+
 
 
 
