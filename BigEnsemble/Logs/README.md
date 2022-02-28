@@ -1,3 +1,5 @@
+28.02.22: Archive, this is OUTDATED, refer to UPDATED_VERSION now
+
 MORE ADVANCED VERSION OF THE BOT
 
 I want to create a Trading Bot that includes two principles: - flashloans - arbirtrage

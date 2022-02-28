@@ -1,3 +1,8 @@
+28.02.22: Archive, this is OUTDATED, refer to UPDATED_VERSION now
+
+
+
+
 24.02.22
 
 Import of the Aave V2 protocol, to use the flashloan services.
