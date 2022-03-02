@@ -7,9 +7,14 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
-    uint deadline;
+    uint256 deadline;
 
-    constructor(address _addressProvider) public FlashLoanReceiverBaseV2(_addressProvider) {deadline = block.timestamp + 300;}
+    constructor(address _addressProvider)
+        public
+        FlashLoanReceiverBaseV2(_addressProvider)
+    {
+        deadline = block.timestamp + 300;
+    }
 
     /**
      * @dev This function must be called only be the LENDING_POOL and takes care of repaying
@@ -32,14 +37,13 @@ contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
         // This contract now has the funds requested.
         // My logic goes here.
         //
-// Can my arbitrage logic be imported from a javascript or python script?
-
+        // Can my arbitrage logic be imported from a javascript or python script?
 
         // At the end of my logic above, my contract owes
         // the flashloaned amounts + premiums.
         // Therefore I need to make sure that my contract has enough to repay
-        // these amounts, through a script get_weth to fund this contract with some WETH 
-        // as the lending pool only accepts wrapped ETH. In production, the user will have to fund 
+        // these amounts, through a script get_weth to fund this contract with some WETH
+        // as the lending pool only accepts wrapped ETH. In production, the user will have to fund
         // our contract with some ETH (or send directly WETH if he has)
         //  and we will make sure to transfer to WETH and to the LENDING_POOL
 
