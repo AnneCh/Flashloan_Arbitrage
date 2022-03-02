@@ -1,7 +1,6 @@
 I want this bot to be simple, to offer few options so to be suitable for people who have no idea
-   how to trade, how to build a trading strategy, so they can just click a few buttons and have
-   their bot start working for them.
-
+how to trade, how to build a trading strategy, so they can just click a few buttons and have
+their bot start working for them.
 
 --- DEFINE LOGIC
 
@@ -10,7 +9,6 @@ Every X seconds :
 - Analyze 2 (or more?) platforms (API Calls?) => example, Is there more than a 2% difference on the price of BTC between platform X and platform Y ? => IF YES1, trigger a flashloan contract => place the Buy Order on platform X => Get latest price on platform Y => is price still at or above 2% higher than what I just bought? => IF YES2, Sell => Withdraw => trigger contract to payback the flashloan / IF NO2 => Cancel trade
 
 => IF NO1, do nothing
-
 
 ### (keep in mind to keep the code simple and as direct as possible, I'll have to skim my code for ways to shorten while still being as secure as possible)
 
@@ -26,43 +24,36 @@ Ensure that before I start coding, I have:
 - Enabled API usage on the exchange and have an API key (Binance ok)
 - Decided how I will be hosting my bot (not done that yet...)
 
-
-------------------------------
-
+---
 
 --- FRONT END
 
 - Connect Users {Metamask} Wallet to the bot
 - Disconnect Users Wallet from the bot
   Once connected
-  - Select a/several ${tokens} to Arbitrage()
-  - Selecte 2/more ${exchanges} to Arbitrage() on
-  - Select a ${minAmount} and ${maxAmount} to flashloan as the ${amountToArbitrage}
-  - Save their selection as template
-  - Save their selection as StrategyName in the Strategies 
-  - Upload their StrategyName to our Bot (*cool animation*) and give our Bot on the mission to find the selection that the User has chosen.
 
-  - Once the Bot has accepted (*quick review of the points before and checking that everything is fine*) the StrategyName, the User can either see data, or choose for the Bot to stop executing their StrategyName
+  - Select a/several \${tokens} to Arbitrage()
+  - Selecte 2/more \${exchanges} to Arbitrage() on
+  - Select a ${minAmount} and ${maxAmount} to flashloan as the \${amountToArbitrage}
+  - Save their selection as template
+  - Save their selection as StrategyName in the Strategies
+  - Upload their StrategyName to our Bot (_cool animation_) and give our Bot on the mission to find the selection that the User has chosen.
+
+  - Once the Bot has accepted (_quick review of the points before and checking that everything is fine_) the StrategyName, the User can either see data, or choose for the Bot to stop executing their StrategyName
 
   - Users can have up to 2 Strategies for free, for more strategies, Users need to upgrade their Account by depositing some Coins(Tokens, cryptocurrencies like ETH or BTC, preferred currency will have to be determined).
 
-  // *Strategies*:
+  // _Strategies_:
+
   - Up to 2 for free
 
     Each Strategy is composed of different fields to be filled in by the Users
-      - Display Coins available to trade by fetching the Users' Metamask's Wallet Balance of Coins
+
+    - Display Coins available to trade by fetching the Users' Metamask's Wallet Balance of Coins
       (Users can only trade)
       ====>>>> Option to access a platform to buy coins (ideally exchanges that we have listed )
-      - Selection of one (or several??) Coins to Arbitrage()
-      - Selection of amount of Coins to FlashLoan()
-
-
-
-
-
-
-
-
+    - Selection of one (or several??) Coins to Arbitrage()
+    - Selection of amount of Coins to FlashLoan()
 
 USEFUL LINKS
 https://airtable.com/shrMmgI2ljeugMbQX/tblW0ecPm3y8jZlSz
@@ -106,5 +97,3 @@ https://cryptomarketpool.com/flash-loan-arbitrage-on-uniswap-and-sushiswap/
 
 About using Ethereum logs as event (python):
 https://cryptomarketpool.com/how-to-listen-for-ethereum-events-using-web3-in-python/
-
-
