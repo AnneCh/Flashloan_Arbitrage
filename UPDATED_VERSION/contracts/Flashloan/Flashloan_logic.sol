@@ -25,7 +25,9 @@ contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
      * @param premiums The array of premiums incurred as additional debts.
      * @param initiator The address that initiated the flash loan, unused.
      * @param params The byte array containing, in this case, the arrays of aTokens and aTokenAmounts.
+     * Lending Pool only
      */
+     
     function executeOperation(
         address[] calldata assets,
         uint256[] calldata amounts,

@@ -1,3 +1,17 @@
+## 03 March 
+
+Contract itself must:
+
+    - conform to FlashLoanReceiverBase
+        = include the executeOperation  that the Lending Pool is actually going to call and pass in the relevant parameters
+    - call the flahsloan() function on the Lending Pool 
+        = I want to receive the loaned money on my smart contract, so the receiverAddress parameter will need to be address(this)
+
+
+
+WARNINGS
+    - Make sure not to keep funds for an extended period of time on this smart contract, as it would increase the risk of 'griefing' attacks 
+
 ## 01 March
 
 I want to figure out what is the minimum requirements regarding what I need to write in Smart Contracts.
