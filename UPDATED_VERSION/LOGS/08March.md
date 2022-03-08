@@ -4,7 +4,7 @@ Working on smart contract building by understanding through listing each compone
 
 | Name | Type | Visibility | Description |
 
-Contract Flashloan_Logic | FlashLoanReceiverBaseV2, withdrawable | A contract that allows to get a flashloan, execture an arbitrage trade through exchanges PancakeSwap and Uniswap (and maybe Binance)
+Contract Flashloan_Logic | FlashLoanReceiverBaseV2, withdrawable | A contract that allows to get a flashloan, execute an arbitrage trade through exchanges PancakeSwap and Uniswap (and maybe Binance)
 
 <!--
         address[] calldata assets,
