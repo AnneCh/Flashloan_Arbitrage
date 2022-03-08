@@ -6,7 +6,7 @@ import "./aave/FlashLoanReceiverBaseV2.sol";
 import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
-contract FlashloanV2 is FlashLoanReceiverBaseV2, Withdrawable {
+contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     uint256 deadline;
 
     constructor(address _addressProvider)
