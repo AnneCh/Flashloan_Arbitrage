@@ -16,6 +16,11 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         deadline = block.timestamp + 300;
     }
 
+    modifier onlyOwner() {
+        require(msg.sender == owner, "You cannot perform this action");
+        _;
+    }
+
     /**
      * @dev This function must be called only be the LENDING_POOL and takes care of repaying
      * active debt positions, migrating collateral and incurring new V2 debt token debt.
@@ -110,4 +115,10 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
 
     //     _flashloan(assets, amounts);
     // }
+
+    function withdraw() external override {
+        // function called by the user to withdraw his gains
+    }
+
+    // function that makes my contract be able to receive ETH
 }

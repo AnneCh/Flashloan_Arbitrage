@@ -40,8 +40,12 @@ Each smart contract has its own chapter, with a list of `variables`, `modifiers`
 | premiums | Array uint256 | | In calldata - premiums The array of premiums incurred as additional debts. |
 | modes | Array uint256 | -- |In memory |
 
-- @param assets The array of flash loaned assets used to repay debts.
-  - @param amounts The array of flash loaned asset amounts used to repay debts.
-  - @param
-  - @param initiator The address that initiated the flash loan, unused.
-  - @param params The byte array containing, in this case, the arrays of aTokens and aTokenAmounts.
+### Functions
+
+1. Mandatory functions to conform with Aave's receiver base contract and to call the Lending Pool to get a flashloan :
+
+executeOperation() / flashloan()
+
+2. withdraw() external, called by the user when they want their gains withdrawn to their metamask
+
+3. userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool

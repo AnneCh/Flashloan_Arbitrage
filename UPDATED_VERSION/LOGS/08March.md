@@ -7,6 +7,10 @@ today I'll try to move forward in understanding the functions that my flashloan 
 I'm still unsure of the underlying mechanism for my bot. I am watching several videos and trying to understand how everything is supposed to act both on my and the end-user, if my app were to go live
 Furucombo seems to be an interesting platform to check and understand how it works, see what I could try to reproduce.
 
+===> I think I understand NOW!! The key factor that I had failed to understand, is that my Bot, aka my smart contract, is the one holding the profit accumulated by any user! And that the user can withdraw their profit when they want.
+
+that mean that for any function dealing with money, my smart contract is going to be the only interface, and their metamask wallet only comes into play when initiating the strategy and withdrawing the gains
+
 ## FURUCOMBO
 
 - lets users create their own strategies by using a method of drag and drop of blocks taht represent actions like `flashloan` or `swap` on `uniswap`. It looks like Scratch but for investing strategies.
@@ -28,6 +32,12 @@ https://docs.furucombo.app/
 1. Mandatory functions to conform with Aave's receiver base contract and to call the Lending Pool to get a flashloan :
 
 executeOperation() / flashloan()
+
+2. withdraw() external, called by the user when they want their gains withdrawn to their metamask
+
+3. userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
+
+---
 
 # 08.03.22
 
