@@ -117,6 +117,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     // }
 
     function withdraw() external override {
+        // require recipient == address that borrowed on the first place
         // function called by the user to withdraw his gains
     }
 
