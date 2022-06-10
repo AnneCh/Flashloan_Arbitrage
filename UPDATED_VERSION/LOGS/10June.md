@@ -1,0 +1,25 @@
+Uuuf, I feel very bad about myself and my commitment to seeing this project live.
+I took a break from it as I was working/learning for a project I was lucky to be associated with. But it wasn't so much about the code as it was about the project management and understanding, which is really good too, just different.
+
+But here I am again, and I will do my best to use what I've learned since the last time I worked on this bot, use it to create a clearer, more professional code.
+
+What I've realized, is that I didn't spend nearly enough time _thinking_ about my code, I rushed toward tutorials and ways to get what I want done. Instead, I should spend more time thinking what my code may look like at first, how to cut each single component into the smallest and most reusable unit of code.
+
+I understand that I'll struggle to find what tools, which option is the best, but as long as I can write down what the tool will do as precisely as possible, then I'll be able to look at what the community says about the options, their downfalls and positive sides.
+
+I also need to start writing tests as early as I can.
+Just like the code, my tests need to be as unitary as possible, and must include as many options as possible.
+I gotta look for a tool that helps with testing, I can't recall if it's called 'jest' or something.
+
+**Points to keep in mind**
+
+- create unit of code that are concern-based (separation of concerns)
+- write tests as I code
+- Use the community-approved naming conventions, to make my code as easy to read as possible
+- Avoir unecessary comments, focus on naming my objects as 'obvio' as possible
+- I'll probably re-do my code a few times before I'm ok with it, and it's ok, coding isn't linear
+
+**To do**
+
+- Find testing tools
+- Draft each component of my code (functions, const)

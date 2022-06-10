@@ -1,6 +1,6 @@
 # 09.03.22
 
-I realized finally that I've been complicating things way too much by wondering how the
+I realized finally that I've been complicating things way too much
 
 today I'll try to move forward in understanding the functions that my flashloan contract is supposed to perform.
 
