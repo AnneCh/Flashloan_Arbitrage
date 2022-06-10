@@ -24,6 +24,8 @@ Each smart contract has its own chapter, with a list of `variables`, `modifiers`
 
 ## Flashloan_logic.sol
 
+### Variables
+
 | Name | Type | Visibility | Description |
 
 | -- | constructor | public | declares the \_addressProvider and set variable deadline |
@@ -44,8 +46,16 @@ Each smart contract has its own chapter, with a list of `variables`, `modifiers`
 
 1. Mandatory functions to conform with Aave's receiver base contract and to call the Lending Pool to get a flashloan :
 
-executeOperation() / flashloan()
+- executeOperation() is an external and override function returning a `boolean` confirming or not that the transaction has gone through (and that the flashloan has correctly been executed)
 
-2. withdraw() external, called by the user when they want their gains withdrawn to their metamask
+- \_flashloan() is an internal function that takes in the assets(tokens) and their amounts and calls the .flashloan() function from the LENDING_POOL
 
-3. userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
+2. flashloanOwner() is the function that will be called by this contract; it's the intermediary function between userFlashloan() and \_flashloan. It takes in the params that the user enters and calls \_flashloan()
+
+3. withdraw() external, called by the user when they want their gains withdrawn to their metamask wallet
+
+4) userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
+
+### Modifiers
+
+1. onlyOwner() makes sure the person performing the transaction is the owner of the present contract

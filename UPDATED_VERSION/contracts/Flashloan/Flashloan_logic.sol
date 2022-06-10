@@ -9,6 +9,7 @@ import "../../interfaces/v2/ILendingPoolV2.sol";
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     uint256 deadline;
 
+    //why do we need deadline?
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBaseV2(_addressProvider)
@@ -46,8 +47,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         //
         // Can my arbitrage logic be imported from a javascript or python script?
 
-        // At the end of my logic above, my contract owes
-        // the flashloaned amounts + premiums.
+        // At the end of my logic above, my contract owes the flashloaned amounts + premiums.
         // Therefore I need to make sure that my contract has enough to repay
         // these amounts, through a script get_weth to fund this contract with some WETH
         // as the lending pool only accepts wrapped ETH. In production, the user will have to fund
@@ -99,7 +99,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     // {
     //     _flashloan(assets, amounts);
     // }
-    //      IT'S EITHER THE UPPER ONE, OR THIS ONE BELOW:
+    //      IT'S EITHER THE UPPER ONE, OR THIS ONE BELOW DEPENDING ON WHETHER THRE'S 1 OR MORE ASSETS??:
     // /*
     //  *  Flash loan 1000000000000000000 wei (1 ether) worth of `_asset`
     //  */
