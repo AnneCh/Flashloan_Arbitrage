@@ -44,8 +44,6 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         //
         // This contract now has the funds requested.
         // My logic goes here.
-        //
-        // Can my arbitrage logic be imported from a javascript or python script?
 
         // At the end of my logic above, my contract owes the flashloaned amounts + premiums.
         // Therefore I need to make sure that my contract has enough to repay
