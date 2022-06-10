@@ -22,4 +22,5 @@ I gotta look for a tool that helps with testing, I can't recall if it's called '
 **To do**
 
 - Find testing tools
-- Draft each component of my code (functions, const)
+- review existing code for this type of project
+- Draft each component of my code (functions, objects and constants)
