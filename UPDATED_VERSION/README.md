@@ -18,9 +18,10 @@ The user will have to connect his metamask wallet
 
 _/_/ later/_/_
 
-# Smart Contracts
+# Smart Contract
 
 Each smart contract has its own chapter, with a list of `variables`, `modifiers` and `functions` created for each smart contract
+For now, only one smart contract.
 
 ## Flashloan_logic.sol
 
@@ -29,8 +30,10 @@ Each smart contract has its own chapter, with a list of `variables`, `modifiers`
 | Name | Type | Visibility | Description |
 
 | -- | constructor | public | declares the \_addressProvider and set variable deadline |
-| deadline | uint256 | -- | ? |
 | owner | address | public | this contract's address |
+| user | address | -- | the address calling the external flashloan function |
+| singleUserIndex | mapping of mapping | -- | This mapping tracks for each single user, the assets flashloaned and their amounts |
+| usersIndex | addresses mapping | -- | Keeps track of the users and assign a number to them (linear) |
 | assets | Array addresses | -- | In calldata - The array of flash loaned assets used to repay debts |
 | amounts | Array uint256 | | In calldata - The array of flash loaned asset amounts used to repay debts. |
 | premiums | Array uint256 | | In calldata - premiums The array of premiums incurred as additional debts. |
@@ -50,7 +53,7 @@ Each smart contract has its own chapter, with a list of `variables`, `modifiers`
 
 - \_flashloan() is the internal function that takes in the assets(tokens) and their amounts and calls the .flashloan() function from the LENDING_POOL
 
-2. flashloanOwner() is the function that will be called by this contract; it's the intermediary function between userFlashloan() and \_flashloan. It takes in the params that the user enters and calls \_flashloan()
+2. flashloan() is the function that will be called by this contract; it's the intermediary function between userFlashloan() and \_flashloan. It takes in the params that the user enters and calls \_flashloan()
 
 3. withdraw() external, called by the user when they want their gains withdrawn to their metamask wallet
 

@@ -7,14 +7,16 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
-    uint256 deadline;
+    address owner;
+    //address user;
+    mapping(address => mapping(address => uint256)) singleUserIndex;
+    mapping(address => uint256) usersIndex;
 
-    //why do we need deadline?
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBaseV2(_addressProvider)
     {
-        deadline = block.timestamp + 300;
+        owner = address.this;
     }
 
     modifier onlyOwner() {
@@ -23,7 +25,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     }
 
     /**
-     * @dev This function must be called only be the LENDING_POOL and takes care of repaying
+     * @dev This function must be called only by the LENDING_POOL and takes care of repaying
      * active debt positions, migrating collateral and incurring new V2 debt token debt.
      *
      * @param assets The array of flash loaned assets used to repay debts.
@@ -86,6 +88,28 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
             params,
             referralCode
         );
+    }
+
+    // the user requests to flashloan x asset for x amount
+
+    function userFlashloan(address memory _asset, uint256 memory _amount)
+        public
+    {
+        if (usersIndex[msg.sender] == 0) {
+            usersIndex.push(msg.sender);
+        }
+
+        flashloan(_asset, _amount);
+    }
+
+    function flashloan(_asset, _amount) public onlyOwner {
+        address[] memory assets = new address[](1);
+        assets[0] = _asset;
+
+        uint256[] memory amounts = new uint256[](1);
+        amounts[0] = _amount;
+
+        _flashloan(assets, amounts);
     }
 
     /*
