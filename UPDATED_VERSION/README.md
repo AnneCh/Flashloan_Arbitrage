@@ -6,6 +6,8 @@
 
 ## Smart Contracts
 
+## Front End
+
 ## Other relevant documents
 
 # Introduction
@@ -57,8 +59,23 @@ For now, only one smart contract.
 
 3. withdraw() external, called by the user when they want their gains withdrawn to their metamask wallet
 
-4) userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
+4. userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
 
 ### Modifiers
 
 1. onlyOwner() makes sure the person performing the transaction is the owner of the present contract
+
+## Front End
+
+- Simple landing page displaying a Dashboard
+- user needs to connect their wallet to use the dashboard
+- the dashboard displays two DEX with live tokens's prices
+- the user can create an arbitrage logic for one asset at a time by selecting and inputing various criteria:
+  => Which asset do they want to want to check the volatility of
+  => select the parameters of the arbitrage (ie only trigger the flashloan if the price difference is more than 3%)
+  => select the maximum amount of flashloan you want to borrow
+  => define for how long the bot should be active (hours, days)
+  => access their transaction history
+  => view their overall gains
+  => withdraw a defined amount/maximum
+  => add another strategy

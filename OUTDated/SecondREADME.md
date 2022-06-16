@@ -1,3 +1,10 @@
+**_Calculations_**
+
+AAVE
+takes 0.09% of the amount
+
+**_LOGIC_**
+
 SIMPLE VERSION OF THE BOT (would rather have the more advanced)
 
 Bot would only trade BTC/USD
@@ -87,7 +94,7 @@ isNextOperationBuy = True
 
 **LOGS are important to have to keep track of the bot's operations**
 EXAMPLE :
-[BALANCE] USD Balance = 22.15$
+[BALANCE] USD Balance = 22.15\$
 [BUY] Bought 0.002 BTC for 22.15 USD
 [PRICE] Last Operation Price updated to 11,171.40 (BTC/USD)
 [ERROR] Could not perform SELL operation - Insufficient balance
