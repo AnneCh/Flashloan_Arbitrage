@@ -90,7 +90,8 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         );
     }
 
-    // the user requests to flashloan x asset for x amount
+    // the user requests to flashloan x asset for x amount.
+    // they enter one asset/amount, but the transaction can take several at once, so we need to add their data to arraysga
 
     function userFlashloan(address memory _asset, uint256 memory _amount)
         public
@@ -111,32 +112,6 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
 
         _flashloan(assets, amounts);
     }
-
-    /*
-    //  *  Flash multiple assets
-    //  */
-    // function flashloan(address[] memory assets, uint256[] memory amounts)
-    //     public
-    //     onlyOwner
-    // {
-    //     _flashloan(assets, amounts);
-    // }
-    //      IT'S EITHER THE UPPER ONE, OR THIS ONE BELOW DEPENDING ON WHETHER THRE'S 1 OR MORE ASSETS??:
-    // /*
-    //  *  Flash loan 1000000000000000000 wei (1 ether) worth of `_asset`
-    //  */
-    // function flashloan(address _asset) public onlyOwner {
-    //     bytes memory data = "";
-    //     uint256 amount = 1 ether;
-
-    //     address[] memory assets = new address[](1);
-    //     assets[0] = _asset;
-
-    //     uint256[] memory amounts = new uint256[](1);
-    //     amounts[0] = amount;
-
-    //     _flashloan(assets, amounts);
-    // }
 
     function withdraw() external override {
         // require recipient == address that borrowed on the first place

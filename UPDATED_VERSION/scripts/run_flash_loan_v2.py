@@ -3,7 +3,8 @@ from brownie import FlashloanV2, accounts, config, network, interface
 MINIMUM_FLASHLOAN_WETH_BALANCE = 500000000000000000
 ETHERSCAN_TX_URL = "https://kovan.etherscan.io/tx/{}"
 
-
+# nah, replace the accounts.add, network and fund with LINK by other functions (helpful scripts)
+# I copies that from somewhere quite a long time ago, I need to understand what's going on better
 def main():
     """
     Executes the funcitonality of the flash loan.
