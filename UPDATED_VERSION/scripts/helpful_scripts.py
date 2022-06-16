@@ -1,7 +1,17 @@
-from brownie import accounts, config, network, interface
+from brownie import accounts, config, network
+
 
 def main():
     get_account()
 
+
+LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["kovan", "ganache-local", "mainnet-fork"]
+
+
 def get_account():
-    # get account from .env and config
+    if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
+        return accounts[0]
+    return accounts.add(config["wallets"]["from_key"])
+
+
+# need to test it
