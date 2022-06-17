@@ -10,12 +10,12 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     mapping(address => mapping(address => uint256)) singleUserIndex;
     mapping(address => uint256) usersIndex;
 
+    // user address?
+
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBaseV2(_addressProvider)
-    {
-        owner = address.this;
-    }
+    {}
 
     modifier onlyOwner() {
         require(msg.sender == owner, "You cannot perform this action");
@@ -76,7 +76,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         for (uint256 i = 0; i < assets.length; i++) {
             modes[i] = 0;
         }
-        /// I don't understand the logic up there, is it a way to reset the mode to 0?
+
         LENDING_POOL.flashLoan(
             receiverAddress,
             assets,
@@ -88,26 +88,13 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         );
     }
 
-    // the user requests to flashloan x asset for x amount.
-    // they enter one asset/amount, but the transaction can take several at once, so we need to add their data to arraysga
-
-    function userFlashloan(address memory _asset, uint256 memory _amount)
+    function flashloan(address[] memory assets, uint256[] memory amounts)
         public
+        onlyOwner
     {
         if (usersIndex[msg.sender] == 0) {
             usersIndex.push(msg.sender);
         }
-
-        flashloan(_asset, _amount);
-    }
-
-    function flashloan(_asset, _amount) public onlyOwner {
-        address[] memory assets = new address[](1);
-        assets[0] = _asset;
-
-        uint256[] memory amounts = new uint256[](1);
-        amounts[0] = _amount;
-
         _flashloan(assets, amounts);
     }
 
@@ -115,7 +102,4 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         // require recipient == address that borrowed on the first place
         // function called by the user to withdraw his gains
     }
-
-    // function that makes my contract be able to receive ETH
-    receive() external payable {}
 }
