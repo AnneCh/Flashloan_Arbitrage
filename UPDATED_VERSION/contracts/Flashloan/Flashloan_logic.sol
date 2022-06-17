@@ -119,4 +119,5 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     }
 
     // function that makes my contract be able to receive ETH
+    receive() external payable {}
 }
