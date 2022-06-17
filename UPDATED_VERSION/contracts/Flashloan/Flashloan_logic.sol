@@ -1,4 +1,4 @@
-//SDPX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 
 pragma solidity ^0.6.6;
 
@@ -7,8 +7,6 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
-    address owner;
-    //address user;
     mapping(address => mapping(address => uint256)) singleUserIndex;
     mapping(address => uint256) usersIndex;
 
