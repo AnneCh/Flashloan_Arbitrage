@@ -10,7 +10,7 @@ takes 0.09% of the amount
 The logic that the user follows to build their bot is such `createBot` :
 
 1. which pair of assets to look at (ie ETH/BNB), `_assets[]`
-2. how big of a difference, in %, should there be between ETH/BNB on DEX1 and DEX2 (needs a reminder that every transaction incurs fees and that they need to take that into account) `margin`
+2. how big of a difference, in %, should there be between ETH/BNB on DEX1 and DEX2 (needs a reminder that every transaction incurs fees and that they need to take that into account) `margin` // calculate potential profit, make a complete analysis that includes slippage and all fees (around 1% total of assets traded + ethereum network fee)
 3. How often should the Bot run the strategy `regularity`
 4. how long should the strategy run for (hours and days)`activeTime`
    Then the user can add another strategy `addBot` (calls `createBot`)
@@ -39,3 +39,5 @@ The logic that my scripts need to follow:
 
 - then the executeOperation will automatically accept or reverse the function if there are not enough funds
 - the profit will remain on the smart contract until it's withdrawn => or should I automatically send the profit on the user's wallet so no tokens remain on the smart contract ?
+
+SEE later about this : https://api.cryptorank.io/docs#section/
