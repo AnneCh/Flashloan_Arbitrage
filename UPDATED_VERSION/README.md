@@ -55,7 +55,7 @@ For now, only one smart contract.
 
 - \_flashloan() is the internal function that takes in the assets(tokens) and their amounts and calls the .flashloan() function from the LENDING_POOL
 
-2. flashloan() is the function that will be called by this contract; it's the intermediary function between userFlashloan() and \_flashloan. It takes in the params that the user enters and calls \_flashloan()
+2. flashloan() is the function that the user will call to ask our contract to call the \_flashloan() on the Lending Pool. It takes in the params that the user enters and calls \_flashloan()
 
 3. withdraw() external, called by the user when they want their gains withdrawn to their metamask wallet
 

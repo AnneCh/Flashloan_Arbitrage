@@ -6,7 +6,7 @@ import "./aave/FlashLoanReceiverBaseV2.sol";
 import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
-contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
+contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable, Ownable {
     mapping(address => mapping(address => uint256)) singleUserIndex;
     mapping(address => uint256) usersIndex;
 
@@ -16,11 +16,6 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         public
         FlashLoanReceiverBaseV2(_addressProvider)
     {}
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "You cannot perform this action");
-        _;
-    }
 
     /**
      * @dev This function must be called only by the LENDING_POOL and takes care of repaying

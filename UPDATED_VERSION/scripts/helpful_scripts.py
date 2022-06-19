@@ -1,18 +1,19 @@
-from brownie import accounts, config, network
+from brownie import Flashloan_logic, accounts, config, network
+
+# AAVE_LENDING_POOL_ADDRESS_PROVIDER = "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
 
 
 def main():
-    get_account()
+    """
+    Deploy a `FlashloanV2` contract from `accounts[0]`.
+    """
 
+    acct = accounts.add(
+        config["wallets"]["from_key"]
+    )  # add your keystore ID as an argument to this call
 
-LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["kovan", "development", "mainnet-fork"]
-
-
-def get_account():
-    if network.show_active() == "development":
-        return accounts[0]
-    else:
-        return accounts.add(config["wallets"]["from_key"])
-
-
-# need to test it
+    flashloan = Flashloan_logic.deploy(
+        config["networks"][network.show_active()]["aave_lending_pool_v2"],
+        {"from": acct},
+    )
+    return flashloan
