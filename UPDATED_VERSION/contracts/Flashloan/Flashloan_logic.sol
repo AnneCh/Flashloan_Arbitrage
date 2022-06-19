@@ -6,7 +6,7 @@ import "./aave/FlashLoanReceiverBaseV2.sol";
 import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
-contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable, Ownable {
+contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     mapping(address => mapping(address => uint256)) singleUserIndex;
     mapping(address => uint256) usersIndex;
 
