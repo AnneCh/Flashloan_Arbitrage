@@ -7,8 +7,9 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
-    mapping(address => mapping(address => uint256)) singleUserIndex;
-    mapping(address => uint256) usersIndex;
+    mapping(address => mapping(address => uint256)) private singleUserIndex;
+    mapping(address => uint256) public usersIndex;
+    uint256 indexUsers;
 
     // user address?
 
@@ -87,14 +88,14 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         public
         onlyOwner
     {
-        if (usersIndex[msg.sender] == 0) {
-            usersIndex.push(msg.sender);
-        }
+        // if (usersIndex[msg.sender] == 0) {
+        //     usersIndex[msg.sender] = [indexUsers++];
+        // }
         _flashloan(assets, amounts);
     }
 
-    function withdraw() external override {
-        // require recipient == address that borrowed on the first place
-        // function called by the user to withdraw his gains
-    }
+    // function withdraw() external onlyOwner {
+    //     // require recipient == address that borrowed on the first place
+    //     // function called by the user to withdraw his gains
+    // }
 }
