@@ -7,16 +7,27 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
-    mapping(address => mapping(address => uint256)) private singleUserIndex;
+    //mapping(address => mapping(address => uint256)) private singleUserIndex;
     mapping(address => uint256) public usersIndex;
     uint256 indexUsers;
+    address[] public Users;
+    address newUser;
 
-    // user address?
+    // function addIndex(address) {
+    //     for(i=0; i < Users[].length; i++){
+    //         indexUsers = i + 1;
+    //         usersIndex[msg.sender] = indexUsers;
+    //         return indexUsers;
+    //         }
+    // }
 
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBaseV2(_addressProvider)
-    {}
+    {
+        newUser = msg.sender;
+        Users.push[newUser];
+    }
 
     /**
      * @dev This function must be called only by the LENDING_POOL and takes care of repaying
@@ -88,14 +99,16 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         public
         onlyOwner
     {
+        owner = msg.sender;
         // if (usersIndex[msg.sender] == 0) {
         //     usersIndex[msg.sender] = [indexUsers++];
         // }
+
         _flashloan(assets, amounts);
     }
 
-    // function withdraw() external onlyOwner {
-    //     // require recipient == address that borrowed on the first place
-    //     // function called by the user to withdraw his gains
-    // }
+    function withdraw() external onlyOwner {
+        // onlyOwner makes it that only the address who deployed the contract will be able to call this function
+        // function called by the user to withdraw his gains
+    }
 }
