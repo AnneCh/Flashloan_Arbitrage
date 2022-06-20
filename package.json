@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "ganache-cli": "^6.12.2"
+    "ganache-cli": "^6.12.2",
+    "node": "^18.4.0"
   }
 }

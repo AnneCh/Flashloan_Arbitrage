@@ -13,12 +13,12 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     address[] public Users;
     address newUser;
 
-    function addIndex(address _newUser) public {
+    function addIndex(address _newUser) public returns (uint256) {
         _newUser = newUser;
         uint256 i;
-        for (i = 0; i < Users[].length; i++) {
+        for (i = 0; i < Users.length; i++) {
             indexUsers += i;
-            usersIndex[indexUsers] = _newUser;
+            usersIndex[newUser] = indexUsers;
             return indexUsers;
         }
     }
@@ -27,8 +27,8 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         public
         FlashLoanReceiverBaseV2(_addressProvider)
     {
-        newUser = msg.sender;
-        Users.push[newUser];
+        newUser = payable(msg.sender);
+        Users.push(newUser);
         addIndex(newUser);
     }
 
