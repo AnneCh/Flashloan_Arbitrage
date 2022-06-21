@@ -2,11 +2,11 @@ from brownie import accounts
 
 
 def main():
-    prinnt()
+    deploy_flashloan()
 
 
 def deploy_flashloan():
-    account = accounts[0]
+    account = accounts.load("flashloan-project")
     print(account)
 
 
