@@ -1,3 +1,4 @@
+dotenv: .env
 # use Ganache's forked mainnet mode as the default network
 networks:
   default: mainnet-fork
@@ -27,4 +28,4 @@ networks:
     weth: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
 wallets:
   from_key: ${PRIVATE_KEY}
-dotenv: .env
+

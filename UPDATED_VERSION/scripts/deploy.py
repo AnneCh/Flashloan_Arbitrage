@@ -1,5 +1,4 @@
-from brownie import accounts
-import os
+from brownie import accounts, config, Flashloan_logic
 
 
 def main():
@@ -7,7 +6,7 @@ def main():
 
 
 def deploy_flashloan():
-    # account = accounts.load("flashloan-project")
-    # print(account)
-    accountAnne = accounts.add(os.getenv("PRIVATE_KEY"))
+    # accountAnne = accounts.load("flashloan-project")
+    accountAnne = accounts.add(config["wallets"]["from_key"])
+    Flashloan_logic.deploy({"from": accountAnne})
     print(accountAnne)
