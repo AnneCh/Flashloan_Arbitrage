@@ -1,4 +1,4 @@
-from brownie import accounts, config, Flashloan_logic
+from brownie import accounts, config, Flashloan_logic, network
 
 
 def main():
@@ -8,5 +8,9 @@ def main():
 def deploy_flashloan():
     # accountAnne = accounts.load("flashloan-project")
     accountAnne = accounts.add(config["wallets"]["from_key"])
-    Flashloan_logic.deploy({"from": accountAnne})
+    flashloan = Flashloan_logic.deploy(
+        config["networks"][network.show_active()]["aave_lending_pool_v2"],
+        {"from": accountAnne},
+    )
+
     print(accountAnne)

@@ -1,1 +1,8 @@
-{}
+{
+  "42": {
+    "Flashloan_logic": [
+      "0x8A8317Ed9B0d5F172eAbDD60083C3E7092eF87df",
+      "0x77a92b9a20D62942677eAEe9747973a51Da0909e"
+    ]
+  }
+}
