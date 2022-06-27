@@ -307,7 +307,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 246,
-        "sourceUnit": 454,
+        "sourceUnit": 546,
         "src": "102:65:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -318,7 +318,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 246,
-        "sourceUnit": 829,
+        "sourceUnit": 921,
         "src": "168:48:7",
         "symbolAliases": [],
         "unitAlias": ""
@@ -351,10 +351,10 @@
               "id": 7,
               "name": "Withdrawable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1422,
+              "referencedDeclaration": 394,
               "src": "271:12:7",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Withdrawable_$1422",
+                "typeIdentifier": "t_contract$_Withdrawable_$394",
                 "typeString": "contract Withdrawable"
               }
             },
@@ -365,9 +365,9 @@
         ],
         "contractDependencies": [
           302,
-          1422,
+          394,
           1458,
-          1670,
+          1567,
           2204
         ],
         "contractKind": "contract",
@@ -376,8 +376,8 @@
         "id": 245,
         "linearizedBaseContracts": [
           245,
-          1422,
-          1670,
+          394,
+          1567,
           2204,
           302,
           1458
@@ -1488,7 +1488,7 @@
                             "lValueRequested": false,
                             "memberName": "add",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 857,
+                            "referencedDeclaration": 949,
                             "src": "2628:14:7",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1529,7 +1529,7 @@
                                   "referencedDeclaration": 275,
                                   "src": "2703:12:7",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_contract$_ILendingPoolV2_$828",
+                                    "typeIdentifier": "t_contract$_ILendingPoolV2_$920",
                                     "typeString": "contract ILendingPoolV2"
                                   }
                                 }
@@ -1537,7 +1537,7 @@
                               "expression": {
                                 "argumentTypes": [
                                   {
-                                    "typeIdentifier": "t_contract$_ILendingPoolV2_$828",
+                                    "typeIdentifier": "t_contract$_ILendingPoolV2_$920",
                                     "typeString": "contract ILendingPoolV2"
                                   }
                                 ],
@@ -1658,10 +1658,10 @@
                                 "name": "IERC20",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 1102,
+                                "referencedDeclaration": 1194,
                                 "src": "2669:6:7",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_type$_t_contract$_IERC20_$1102_$",
+                                  "typeIdentifier": "t_type$_t_contract$_IERC20_$1194_$",
                                   "typeString": "type(contract IERC20)"
                                 }
                               },
@@ -1676,7 +1676,7 @@
                               "src": "2669:17:7",
                               "tryCall": false,
                               "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_IERC20_$1102",
+                                "typeIdentifier": "t_contract$_IERC20_$1194",
                                 "typeString": "contract IERC20"
                               }
                             },
@@ -1687,7 +1687,7 @@
                             "lValueRequested": false,
                             "memberName": "approve",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 1071,
+                            "referencedDeclaration": 1163,
                             "src": "2669:25:7",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2965,7 +2965,7 @@
                         "referencedDeclaration": 275,
                         "src": "3251:12:7",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ILendingPoolV2_$828",
+                          "typeIdentifier": "t_contract$_ILendingPoolV2_$920",
                           "typeString": "contract ILendingPoolV2"
                         }
                       },
@@ -2976,7 +2976,7 @@
                       "lValueRequested": false,
                       "memberName": "flashLoan",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 706,
+                      "referencedDeclaration": 798,
                       "src": "3251:22:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_array$_t_address_$dyn_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$_t_address_$_t_bytes_memory_ptr_$_t_uint16_$returns$__$",
@@ -3203,7 +3203,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1619,
+                  "referencedDeclaration": 1516,
                   "src": "3548:9:7",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3335,7 +3335,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1619,
+                  "referencedDeclaration": 1516,
                   "src": "3641:9:7",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",

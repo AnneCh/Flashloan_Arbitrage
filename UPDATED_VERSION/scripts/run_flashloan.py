@@ -4,7 +4,7 @@ from scripts.helpful import get_account, get_wethInterface
 # set up global variables that will reflect the minimum WETH balance required in order for the
 # caller to have enough WETH to pay the fees
 # and one to ge the URL base to display the transaction when sucessful
-MINIMUM_FLASHLOAN_WETH_BALANCE = 50000000000000000
+MINIMUM_FLASHLOAN_WETH_BALANCE = 10000000000000000
 ETHERSCAN_TX_URL = "https://kovan.etherscan.io/tx/{}"
 
 
