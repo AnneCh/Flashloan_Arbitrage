@@ -12,4 +12,5 @@ def deploy_flashloan():
         config["networks"][network.show_active()]["aave_lending_pool_v2"],
         {"from": accountAnne},
     )
+    return flashloan
     # print(accountAnne)
