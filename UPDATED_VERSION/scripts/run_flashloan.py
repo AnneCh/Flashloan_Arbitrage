@@ -21,9 +21,9 @@ def main():
         print("Giving some of your WETH away to the contract, for gas.")
         weth.transfer(
             flashloan,
-            "20 ether",
+            "1 ether",
             {"from": accountCaller, "gas_limit": 1200000, "allow_revert": True},
-        )  # borrow 20ETH in flashloan
+        )  # borrow 1ETH in flashloan
     print("Executing flashloan...Be Patient!!")
     tx = flashloan.flashloan(
         weth, {"from": accountCaller}
