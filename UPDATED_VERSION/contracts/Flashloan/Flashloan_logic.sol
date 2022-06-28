@@ -7,6 +7,15 @@ import "../../interfaces/v2/ILendingPoolAddressesProviderV2.sol";
 import "../../interfaces/v2/ILendingPoolV2.sol";
 
 contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
+    constructor(address _addressProvider)
+        public
+        FlashLoanReceiverBaseV2(_addressProvider)
+    {
+        // newUser = payable(msg.sender);
+        // Users.push(newUser);
+        // addIndex(newUser);
+    }
+
     //mapping(address => mapping(address => uint256)) private singleUserIndex;
     mapping(address => uint256) public usersIndex;
     uint256 indexUsers;
@@ -21,15 +30,6 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
             usersIndex[newUser] = indexUsers;
         }
         return indexUsers;
-    }
-
-    constructor(address _addressProvider)
-        public
-        FlashLoanReceiverBaseV2(_addressProvider)
-    {
-        newUser = payable(msg.sender);
-        Users.push(newUser);
-        addIndex(newUser);
     }
 
     /**
