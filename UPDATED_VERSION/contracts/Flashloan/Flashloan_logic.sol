@@ -11,9 +11,9 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         public
         FlashLoanReceiverBaseV2(_addressProvider)
     {
-        // newUser = payable(msg.sender);
-        // Users.push(newUser);
-        // addIndex(newUser);
+        newUser = payable(msg.sender);
+        Users.push(newUser);
+        addIndex(newUser);
     }
 
     //mapping(address => mapping(address => uint256)) private singleUserIndex;
@@ -96,6 +96,16 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
             params,
             referralCode
         );
+    }
+
+    function userFlashloan(address _asset, uint256 _amount) public onlyOwner {
+        address[] memory assets = new address[](1);
+        assets[0] = _asset;
+
+        uint256[] memory amounts = new uint256[](1);
+        amounts[0] = _amount;
+
+        flashloan(assets, amounts);
     }
 
     function flashloan(address[] memory assets, uint256[] memory amounts)

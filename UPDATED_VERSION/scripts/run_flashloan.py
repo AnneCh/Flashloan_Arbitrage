@@ -25,9 +25,7 @@ def main():
             {"from": accountCaller, "gas_limit": 1200000, "allow_revert": True},
         )
     print("Executing flashloan...Be Patient!!")
-    tx = flashloan.flashloan(
-        weth, "1 ether", {"from": accountCaller}
-    )  # approve the contract to transfer back the borrowed tokens
+    tx = flashloan.userFlashloan(weth, "2 ether", {"from": accountCaller})
     print(
         "Youhouuuuuuuuuu!!! Here is the link to your transaction: "
         + ETHERSCAN_TX_URL.format(
