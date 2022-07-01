@@ -98,7 +98,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         );
     }
 
-    function userFlashloan(address _asset, uint256 _amount) public onlyOwner {
+    function userFlashloan(address _asset) public onlyOwner {
         address[] memory assets = new address[](1);
         assets[0] = _asset;
 
