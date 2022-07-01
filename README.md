@@ -23,13 +23,13 @@ I was stuck in some ways and tried to figure my way out of a problem by creating
 
 ## Languages, frameworks
 
-Solidity - smart contracts
-Brownie - framework
-Packages - Node
-Python - scripts
-ReactJS - front-end
-Material UI - react library for CSS
-i18next - react translation library
+Solidity - smart contracts /
+Brownie - framework /
+Packages - Node /
+Python - scripts /
+ReactJS - front-end /
+Material UI - react library for CSS /
+i18next - react translation library /
 
 # Logs
 

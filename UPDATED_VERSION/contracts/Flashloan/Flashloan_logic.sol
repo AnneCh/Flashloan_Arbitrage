@@ -10,27 +10,23 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     constructor(address _addressProvider)
         public
         FlashLoanReceiverBaseV2(_addressProvider)
-    {
-        newUser = payable(msg.sender);
-        Users.push(newUser);
-        addIndex(newUser);
-    }
+    {}
 
     //mapping(address => mapping(address => uint256)) private singleUserIndex;
-    mapping(address => uint256) public usersIndex;
-    uint256 indexUsers;
-    address[] public Users;
-    address newUser;
+    // mapping(address => uint256) public usersIndex;
+    // uint256 indexUsers;
+    // address[] public Users;
+    // address newUser;
 
-    function addIndex(address x) public returns (uint256) {
-        newUser = x;
-        uint256 i;
-        for (i = 0; i < Users.length; i++) {
-            indexUsers += i;
-            usersIndex[newUser] = indexUsers;
-        }
-        return indexUsers;
-    }
+    // function addIndex(address x) public returns (uint256) {
+    //     newUser = x;
+    //     uint256 i;
+    //     for (i = 0; i < Users.length; i++) {
+    //         indexUsers += i;
+    //         usersIndex[newUser] = indexUsers;
+    //     }
+    //     return indexUsers;
+    // }
 
     /**
      * @dev This function must be called only by the LENDING_POOL and takes care of repaying
@@ -118,5 +114,5 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
     function withdraw() public payable onlyOwner {
         // onlyOwner makes it that only the address who deployed the contract will be able to call this function
         msg.sender.transfer(address(this).balance);
-    }
+    } // ====>>> review this function
 }
