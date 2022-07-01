@@ -34,12 +34,9 @@ For now, only one smart contract.
 | -- | constructor | public | declares the \_addressProvider and set variable deadline |
 | owner | address | public | this contract's address |
 | user | address | -- | the address calling the external flashloan function |
-| singleUserIndex | mapping of mapping | -- | This mapping tracks for each single user, the assets flashloaned and their amounts |
-| usersIndex | addresses mapping | -- | Keeps track of the users and assign a number to them (linear) |
 | assets | Array addresses | -- | In calldata - The array of flash loaned assets used to repay debts |
 | amounts | Array uint256 | | In calldata - The array of flash loaned asset amounts used to repay debts. |
 | premiums | Array uint256 | | In calldata - premiums The array of premiums incurred as additional debts. |
-| initiator | address | -- | The address that initiated the flash loan, unused |
 | params | bytes | -- | In memory -The byte array containing, in this case, the arrays of aTokens and aTokenAmounts. |
 | amountOwing | uint256 | -- | |
 | receiverAddress | address | -- | this contract's address |
@@ -57,9 +54,9 @@ For now, only one smart contract.
 
 2. flashloan() is the function that the user will call to ask our contract to call the \_flashloan() on the Lending Pool. It takes in the params that the user enters and calls \_flashloan()
 
-3. withdraw() external, called by the user when they want their gains withdrawn to their metamask wallet
+3. withdraw() public payable, called by the user when they want their gains withdrawn to their metamask wallet
 
-4. userFlashloan() external = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
+4. userFlashloan() public onlyOwner = the function that the user will trigger to ask our contract to call the flashloan() on the Lending Pool
 
 ### Modifiers
 
@@ -67,6 +64,7 @@ For now, only one smart contract.
 
 ## Front End
 
+- Welcome page - display some information, offers a log-in access (user/admin)
 - Simple landing page displaying a Dashboard
 - user needs to connect their wallet to use the dashboard
 - the dashboard displays two DEX with live tokens's prices
