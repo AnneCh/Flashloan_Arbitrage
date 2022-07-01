@@ -28,7 +28,6 @@ def main():
     print("Contract properly funded...Executing flashloan...Be Patient!!")
     tx = flashloan.userFlashloan(
         weth,
-        "1 ether",
         {"from": accountCaller, "gas_limit": 30000000, "allow_revert": True},
     )
     print(

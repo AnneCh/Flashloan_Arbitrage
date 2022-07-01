@@ -103,7 +103,7 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         assets[0] = _asset;
 
         uint256[] memory amounts = new uint256[](1);
-        amounts[0] = _amount;
+        amounts[0] = 1 ether;
 
         flashloan(assets, amounts);
     }
@@ -115,8 +115,8 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         _flashloan(assets, amounts);
     }
 
-    function withdraw() external onlyOwner {
+    function withdraw() public payable onlyOwner {
         // onlyOwner makes it that only the address who deployed the contract will be able to call this function
-        // function called by the user to withdraw his gains
+        msg.sender.transfer(address(this).balance);
     }
 }
