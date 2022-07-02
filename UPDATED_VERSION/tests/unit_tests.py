@@ -31,11 +31,12 @@ def flashloan(Flashloan_logic, aave_lending_pool_v2, acct):
     yield Flashloan_logic.deploy(aave_lending_pool_v2, {"from": acct})
 
 
+# haven't tested the fixtures yet
+
+
 def test_account():
     assert test_account == "0x4a8e4183709bb59E0807D64E46cFe7747479d371"
-
-
-# first test passed!
+    # first test passed!
 
 
 def weth_balance():

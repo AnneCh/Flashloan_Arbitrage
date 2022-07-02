@@ -2,6 +2,7 @@
 
 AAVE
 takes 0.09% of the amount
+UniSwap/SushiSwap ususally have around 0.3%
 
 **_LOGIC_**
 
@@ -15,6 +16,9 @@ The logic that the user follows to build their bot is such `createBot` :
 4. how long should the strategy run for (hours and days)`activeTime`
    Then the user can add another strategy `addBot` (calls `createBot`)
    or choose to withdraw their gains `withdrawGains`
+
+   => add slippage tolerance
+
 5. How much ETH to flashloan every time the bot sees an opportunity (ie 10ETH) `_asset` `_amount`
    (6. Implement an option that allows automatic transfers to the user's wallet above a certain amount?)
 
