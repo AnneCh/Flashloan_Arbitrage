@@ -94,12 +94,12 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         );
     }
 
-    function userFlashloan(address _asset) public onlyOwner {
+    function userFlashloan(address _asset, uint256 _amount) public onlyOwner {
         address[] memory assets = new address[](1);
         assets[0] = _asset;
 
         uint256[] memory amounts = new uint256[](1);
-        amounts[0] = 1 ether;
+        amounts[0] = _amount;
 
         flashloan(assets, amounts);
     }

@@ -1,4 +1,4 @@
-from brownie import accounts, config, Flashloan_logic, network
+from brownie import config, Flashloan_logic, network
 from scripts.helpful import get_account
 
 
