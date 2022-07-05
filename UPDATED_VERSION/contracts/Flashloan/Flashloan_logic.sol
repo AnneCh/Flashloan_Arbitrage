@@ -51,13 +51,6 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         // This contract now has the funds requested.
         // My logic goes here.
 
-        // At the end of my logic above, my contract owes the flashloaned amounts + premiums.
-        // Therefore I need to make sure that my contract has enough to repay
-        // these amounts, through a script get_weth to fund this contract with some WETH
-        // as the lending pool only accepts wrapped ETH. In production, the user will have to fund
-        // our contract with some ETH (or send directly WETH if he has)
-        //  and we will make sure to transfer to WETH and to the LENDING_POOL
-
         // Approve the LendingPool contract allowance to *pull* the owed amount
         for (uint256 i = 0; i < assets.length; i++) {
             uint256 amountOwing = amounts[i].add(premiums[i]);
@@ -111,8 +104,10 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
         _flashloan(assets, amounts);
     }
 
-    function withdraw() public payable onlyOwner {
-        // onlyOwner makes it that only the address who deployed the contract will be able to call this function
+    // modifier nonZeroValue() { if (!(msg.value > 0)) throw; _; }
+
+    function withdraw(address) public payable onlyOwner {
+        //will need to be modif to make safer
         msg.sender.transfer(address(this).balance);
-    } // ====>>> review this function
+    }
 }
