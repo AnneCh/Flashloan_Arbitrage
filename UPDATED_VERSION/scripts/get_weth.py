@@ -8,6 +8,6 @@ def main():
 def get_weth():
     accountA = get_account()
     weth = get_wethInterface()
-    tx = weth.deposit({"from": accountA, "value": 200000000000000000})
+    tx = weth.deposit({"from": accountA, "value": 100000000000000000})
     print("Yeah you made it!")
     return tx
