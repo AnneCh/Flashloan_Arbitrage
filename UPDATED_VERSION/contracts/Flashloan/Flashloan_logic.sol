@@ -106,8 +106,9 @@ contract Flashloan_logic is FlashLoanReceiverBaseV2, Withdrawable {
 
     // modifier nonZeroValue() { if (!(msg.value > 0)) throw; _; }
 
-    function withdraw() public payable onlyOwner {
+    function withdraw() external onlyOwner {
         //will need to be modif to make safer
-        msg.sender.transfer(address(this).balance);
+        owner = payable(msg.sender);
+        owner.transfer(address(this).balance);
     }
 }
