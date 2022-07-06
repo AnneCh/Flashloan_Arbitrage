@@ -8,12 +8,12 @@ def main():
     acct = get_account()
     weth = get_wethInterface()
     flashloan = Flashloan_logic[len(Flashloan_logic) - 1]
-    weth.transfer(
-        flashloan,
-        "0.1 ether",
-        {"from": acct, "gas_limit": 1200000, "allow_revert": True},
-    )
-    print("Successfully deposited 0.1ETH into contract")
+    # weth.transfer(
+    #     flashloan,
+    #     "0.1 ether",
+    #     {"from": acct, "gas_limit": 1200000, "allow_revert": True},
+    # )
+    # print("Successfully deposited 0.1ETH into contract")
     print(weth.balanceOf(flashloan))
     print("Now let`s withdraw those 0.1 back into our wallet")
     tx = flashloan.withdraw(

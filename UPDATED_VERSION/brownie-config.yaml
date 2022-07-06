@@ -1,7 +1,7 @@
 dotenv: .env
 # use Ganache's forked mainnet mode as the default network
 networks:
-  default: kovan
+  default: mainnet-fork
 
 # automatically fetch contract sources from Etherscan
 autofetch_sources: True
@@ -16,7 +16,7 @@ compiler:
     remappings:
       - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.0.0"
 networks:
-  default: kovan
+  default: mainnet-fork
   mainnet-fork:
     aave_lending_pool_v2: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
     weth: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
